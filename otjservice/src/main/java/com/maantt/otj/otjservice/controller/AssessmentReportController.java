@@ -22,9 +22,13 @@ public class AssessmentReportController {
     @Autowired
     private AssessmentReportService service;
 	
-	@GetMapping
+	@GetMapping("/report")
 	public List<AssessmentReport> list(){
 		return service.listAllReport();
 	}
-
-}
+	
+	@GetMapping("/validation")
+	public void ExcelVerification() {
+		service.ExcelVerification();
+		}
+	}

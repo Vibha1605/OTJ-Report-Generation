@@ -7,6 +7,7 @@ import com.maantt.otj.otjservice.model.AssessmentReport;
 
 @Repository
 public interface AssessmentReportRepository extends JpaRepository<AssessmentReport, Long> {
-	//@Query("SELECT a FROM AssessmentReport a JOIN FETCH a.skillClusters")
-	//List<AssessmentReport> getAllAssessmentReports();
+    @SuppressWarnings("unchecked")
+	// You can omit this method if you want to use the default save method
+    AssessmentReport save(AssessmentReport assessmentReport);
 }
