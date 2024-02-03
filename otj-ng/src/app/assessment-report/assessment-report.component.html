@@ -1,3 +1,22 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4">
+          <div class="mb-3">
+              <label for="formFile" class="form-label">Upload file example</label>
+              <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
+              <div *ngIf="response && response.status == 'success'" style="color:green;" >File uploaded successfully.</div>
+              <div *ngIf="response && response.status == 'errors'">
+                  <p style="color:red;">Uploaded file has errors</p>
+                      <ul>
+                          <li *ngFor="let error of response.errors" style="color:red;">{{ error }}</li>
+                      </ul>
+              </div>
+              <!-- <div *ngIf="response && response.status == 'errors'">{{response.errors}} -->
+              <button (click)="this.upload()" type="button" class="btn btn-primary mt-3">Upload</button>
+          </div>
+      </div>
+  </div>
+</div>
 <div class="container-fluid">
   
     <table class="table table-bordered">

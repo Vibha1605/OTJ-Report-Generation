@@ -179,4 +179,14 @@ public class AssessmentReport {
 				id, associateId, associateName, associateEmail, otjName, otjCode, otjReceivedDate, plannedDeliveryDate,
 				actualDeliveryDate, score, status);
 	}
+
+	public boolean hasErrors() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<String> getErrors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

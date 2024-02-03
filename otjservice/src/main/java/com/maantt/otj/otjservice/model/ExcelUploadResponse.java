@@ -1,8 +1,6 @@
 package com.maantt.otj.otjservice.model;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ExcelUploadResponse {
 	
@@ -19,10 +17,14 @@ public class ExcelUploadResponse {
 	}
 
 
-	public ExcelUploadResponse(String status, List<String> errors, AssessmentReport assessmentReport) {
+	public ExcelUploadResponse(String status, List<String> errors) {
 		super();
 		this.status = status;
 		this.errors = errors;
+	}
+	
+	public ExcelUploadResponse(String status, AssessmentReport assessmentReport) {
+		this.status = status;
 		this.assessmentReport = assessmentReport;
 	}
 
@@ -45,13 +47,14 @@ public class ExcelUploadResponse {
 	public void setErrors(List<String> errors) {
 		this.errors = errors;
 	}
-	
-	public AssessmentReport getReport() { 
+
+
+	public AssessmentReport getAssessmentReport() {
 		return assessmentReport;
 	}
 
 
-	public void setStatus(AssessmentReport assessmentReport) {
+	public void setAssessmentReport(AssessmentReport assessmentReport) {
 		this.assessmentReport = assessmentReport;
 	}
 
@@ -61,5 +64,7 @@ public class ExcelUploadResponse {
 		return String.format("ExcelUploadResponse [status=%s, errors=%s, assessmentReport=%s]", status, errors,
 				assessmentReport);
 	}
+	
+	
 
 }

@@ -13,11 +13,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.maantt.otj.otjservice.model.AssessmentReport;
 import com.maantt.otj.otjservice.model.ExcelUploadResponse;
+import com.maantt.otj.otjservice.model.SkillCluster;
 
 
 @RestController
 @RequestMapping("/api/excel")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin
 public class AssessmentReportController {
 
     @PostMapping("/upload")
@@ -39,12 +40,34 @@ public class AssessmentReportController {
             //ExcelUploadResponse assessmentReport = new ExcelUploadResponse("report", assessmentReport);
             AssessmentReport assessmentReport = new AssessmentReport();
             assessmentReport.setId(1);
-            //Set the values
+            assessmentReport.setAssociateId(123456);
+            assessmentReport.setAssociateName("Babu");
+            assessmentReport.setAssociateEmail("babu@gmail.com");
+            assessmentReport.setOtjName("Angular");
+            assessmentReport.setOtjCode("24857209");
+            assessmentReport.setOtjReceivedDate(new java.sql.Date(System.currentTimeMillis()));
+            assessmentReport.setPlannedDeliveryDate(null);
+            assessmentReport.setActualDeliveryDate(null);
+            assessmentReport.setScore(98);
+            assessmentReport.setStatus("Completed");
+            SkillCluster skillCluster1 = new SkillCluster();
+            skillCluster1.setId(1);
+            skillCluster1.setFeatures("Feature1");
+            skillCluster1.setTopicwiseScore(80);
+            SkillCluster skillCluster2 = new SkillCluster();
+            skillCluster2.setId(2);
+            skillCluster2.setFeatures("Feature2");
+            skillCluster2.setTopicwiseScore(50);
+            
+            List<SkillCluster> skillClusters = new ArrayList<>();
+            skillClusters.add(skillCluster1);
+            skillClusters.add(skillCluster2);
+            assessmentReport.setSkillClusters(skillClusters);
             
     		ExcelUploadResponse errorResponse = new ExcelUploadResponse("errors", errors);
-    		ExcelUploadResponse successResponse = new ExcelUploadResponse("success", new ArrayList<String>());
+    		ExcelUploadResponse successResponse = new ExcelUploadResponse("success", assessmentReport);
     		
-            return new ResponseEntity<>(successResponse, HttpStatus.OK);
+            return new ResponseEntity<>(errorResponse, HttpStatus.OK);
         } catch (Exception e) {
             // Handle other exceptions or errors
 //            response.put("status", "error");
