@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Page_2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06bf1507-66a9-4fa8-a48a-a7f5d050b5ef">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Associate_email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="8" y="5" width="548" height="40" backcolor="rgba(36, 170, 237, 0.88235295)" uuid="df0da942-5461-4214-946b-310f7111ce1e"/>
+				<textField>
+					<reportElement x="10" y="10" width="530" height="25" forecolor="#FFFFFF" uuid="07a72f25-c930-435d-82dc-620b452a9ba1"/>
+					<textElement>
+						<font fontName="Arial" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ASSESSMENT REPORT OF : " + $F{Associate_email}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="8" y="13" width="548" height="3" backcolor="#0073FF" uuid="295f4f63-617d-499f-89fe-0602d186aaac"/>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="647" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="30" width="272" height="30" forecolor="#5232F0" uuid="cb27c7c4-21ec-4d7f-85b5-94cb528eba6f"/>
+				<textElement markup="styled">
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Understanding The Report :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="60" width="92" height="30" uuid="a50a9494-9c23-45dd-a44e-0a07cfb0725a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[The overall skill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="60" width="112" height="30" forecolor="#F72828" uuid="565e496a-ee13-406c-8a8a-8bb7075908b9"/>
+				<textElement>
+					<font fontName="Arial" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Completion Criteria ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="60" width="128" height="30" uuid="00e25f29-ae39-4e09-be66-04566ccfd2ea"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[ for the assessment is]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="60" width="120" height="30" forecolor="#F72828" uuid="b688007d-7d97-4921-9505-85385fc051f8"/>
+				<textElement>
+					<font fontName="Arial" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[60% or above.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="100" width="130" height="30" uuid="983047d8-bd82-4370-a7fe-ca8504fb9f8b"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Skill Analysis : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="130" width="540" height="70" uuid="3f2df877-d2a9-418c-bea4-2b0d7cc31a84"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Measures the extent to which the associate can apply his/her hands-on capability to practical applications. Also, analyzes the ability to apply it in a business environment with pre-defined design constraints. A lower scale indicates lesser ability to apply the hands-on experience.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="190" width="130" height="30" uuid="26d5ac94-02dc-4960-8ab0-7eca76f63d08"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Skill Graph :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="220" width="540" height="60" uuid="b68f4125-81ba-4a71-bc57-5abf6a70c49b"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[The indication of bars in the Skill graph is a relative indication of your performance on the skill topics. Skill Analysis will not be displayed if the associates have not scored in the skill section of the assessment.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="280" width="130" height="30" uuid="8ddbffa9-2552-49ca-ab84-0a357e99e3a4"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Legend :
+]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="7" y="310" width="540" height="190" uuid="285edf1c-d70a-4a8a-9852-c35edb7c4985"/>
+				<rectangle>
+					<reportElement x="10" y="12" width="10" height="12" backcolor="#6AFF00" uuid="9fd03e67-115d-478c-b017-11b52819bcc9"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="30" y="8" width="507" height="40" uuid="370b5a93-b4af-4726-b90f-c71affa99200"/>
+					<textElement>
+						<font fontName="Arial" size="13"/>
+					</textElement>
+					<text><![CDATA[Green Bar indicates that you have been able to demonstrate your skill level in that topic well.
+]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="10" y="57" width="10" height="12" backcolor="#FF4405" uuid="2c06d60e-9ac6-4584-8b6c-ce2002c26ea9"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="30" y="52" width="507" height="40" uuid="c8d8c8f8-c9e4-44b9-8ab8-13e1e229fe18"/>
+					<textElement>
+						<font fontName="Arial" size="13"/>
+					</textElement>
+					<text><![CDATA[Orange Bar indicates that you had attempted to demonstrate your skill level in that topic, however it needs improvement.
+]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="10" y="93" width="10" height="12" backcolor="#B52A31" uuid="5a7757bb-a501-4f99-b0ea-3b5fda8c6beb"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="30" y="90" width="507" height="60" uuid="8a9cf0f8-4501-4f49-8e8f-b8818e541158"/>
+					<textElement>
+						<font fontName="Arial" size="13"/>
+					</textElement>
+					<text><![CDATA[Red Bar indicates that you need to focus more on these topics to be able to demonstrate your skill better in the next attempt of the OJT assessment based on the completed or not completed status.]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="10" y="153" width="10" height="12" backcolor="#948D8A" uuid="a18febf8-2849-456e-94fb-31160f756b2b"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="30" y="150" width="507" height="40" uuid="33c3d7d1-60ac-47b9-92a5-d1c1f0456161"/>
+					<textElement>
+						<font fontName="Arial" size="13"/>
+					</textElement>
+					<text><![CDATA[Grey Bar indicates that you either not answered or not scored.]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="70">
+			<staticText>
+				<reportElement x="-2" y="40" width="482" height="19" uuid="9d869630-49bd-49e4-9b35-b470d84c0df2"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[This report is Confidential. All rights reserved © Maantt Technology Solutions 2023 ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="30" width="562" height="2" forecolor="#0084FF" backcolor="#4D00FF" uuid="6b0e0d3a-0463-42cc-b5a3-3561dc214e8b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="500" y="40" width="56" height="30" uuid="fec85541-f81d-419e-bcd7-d00ed3247bae"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[| Page : 3]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

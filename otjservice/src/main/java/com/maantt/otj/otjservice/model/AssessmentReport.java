@@ -3,8 +3,11 @@ package com.maantt.otj.otjservice.model;
 import java.sql.Date;
 import java.util.List;
 
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,6 +19,7 @@ import jakarta.persistence.Table;
 public class AssessmentReport {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	
 	@Column(name = "associate_id")
@@ -48,7 +52,7 @@ public class AssessmentReport {
 	@Column(name = "status")
 	private String status;
 	
-	@OneToMany(mappedBy = "assessmentReport")
+	@OneToMany(mappedBy = "assessmentReport", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<SkillCluster> skillClusters;
 	
 	public AssessmentReport() {
@@ -171,8 +175,8 @@ public class AssessmentReport {
 	@Override
 	public String toString() {
 		return String.format(
-				"AssessmentReport [id=%s, associateId=%s, associateName=%s, associateEmail=%s, otjName=%s, otjCode=%s, otjReceivedDate=%s, plannedDeliveryDate=%s, actualDeliveryDate=%s, score=%s, status=%s, skillClusters=%s]",
+				"AssessmentReport [id=%s, associateId=%s, associateName=%s, associateEmail=%s, otjName=%s, otjCode=%s, otjReceivedDate=%s, plannedDeliveryDate=%s, actualDeliveryDate=%s, score=%s, status=%s]",
 				id, associateId, associateName, associateEmail, otjName, otjCode, otjReceivedDate, plannedDeliveryDate,
-				actualDeliveryDate, score, status, skillClusters);
+				actualDeliveryDate, score, status);
 	}
 }

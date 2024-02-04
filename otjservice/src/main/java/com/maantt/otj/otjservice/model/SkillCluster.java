@@ -1,5 +1,7 @@
 package com.maantt.otj.otjservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +19,7 @@ public class SkillCluster {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "assessment_report_id")
 	private AssessmentReport assessmentReport;
@@ -72,8 +75,10 @@ public class SkillCluster {
 
 	@Override
 	public String toString() {
-		return String.format("SkillCluster [id=%s, assessmentReport=%s, features=%s, topicwiseScore=%s]", id,
-				assessmentReport, features, topicwiseScore);
+		return String.format("SkillCluster [id=%s, features=%s, topicwiseScore=%s]", id,
+				features, topicwiseScore);
 	}
+
+
 	
 }
