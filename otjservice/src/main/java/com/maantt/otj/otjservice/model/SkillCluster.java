@@ -29,6 +29,8 @@ public class SkillCluster {
 	
 	@Column(name = "topicwise_score")
 	private int topicwiseScore;
+
+	
 	
 	public SkillCluster() {
 	}
@@ -78,5 +80,10 @@ public class SkillCluster {
 		return String.format("SkillCluster [id=%s, features=%s, topicwiseScore=%s]", id,
 				features, topicwiseScore);
 	}
+
+//	public void setScore(int score) {
+//		// TODO Auto-generated method stub
+//		this.score = score;
+//	}
 	
 }
