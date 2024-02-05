@@ -18,6 +18,7 @@ import jakarta.persistence.Table;
 public class AssessmentReport {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	
 	@Column(name = "associate_id")

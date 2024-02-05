@@ -1,5 +1,6 @@
 import { SkillCluster } from "./skill-cluster";
 
+
 export interface AssessmentReport {
     id: number,
     associateId: number,

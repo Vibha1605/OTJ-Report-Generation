@@ -81,9 +81,9 @@ public class SkillCluster {
 				features, topicwiseScore);
 	}
 
-//	public void setScore(int score) {
-//		// TODO Auto-generated method stub
-//		this.score = score;
-//	}
+
+
+
+
 	
 }

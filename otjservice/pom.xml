@@ -42,6 +42,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>5.2.5</version>
@@ -52,13 +53,30 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.5</version>
         </dependency>
-       <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+       
        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>6.4.2.Final</version>
-            <type>pom</type>
-       </dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+	   </dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+		<dependency>
+    		<groupId>net.sf.jasperreports</groupId>
+    		<artifactId>jasperreports</artifactId>
+    		<version>6.17.0</version>
+		</dependency>
+		<dependency>
+    		<groupId>net.sf.jasperreports</groupId>
+    		<artifactId>jasperreports-fonts</artifactId>
+    		<version>6.8.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.validation</groupId>
+		    <artifactId>jakarta.validation-api</artifactId>  
+		</dependency>
+		
+		
 	</dependencies>
 
 	<build>

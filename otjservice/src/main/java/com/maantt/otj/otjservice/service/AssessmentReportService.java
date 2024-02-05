@@ -31,6 +31,7 @@ import com.maantt.otj.otjservice.model.SkillCluster;
 import com.maantt.otj.otjservice.repository.AssessmentReportRepository;
 
 @Service
+
 @Transactional
 public class AssessmentReportService {
 
@@ -48,6 +49,11 @@ public class AssessmentReportService {
 	public List<AssessmentReport> listAllReport() {
 		return repository.findAll();
 	}
+	
+	public AssessmentReport findReportById(int id) {
+        return repository.findById(id);
+    }
+
 
 	public void save(AssessmentReport assessmentReport) {
 		repository.save(assessmentReport);
@@ -395,3 +401,4 @@ public class AssessmentReportService {
 	}
 
 }
+

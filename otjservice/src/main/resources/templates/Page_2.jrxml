@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Page_2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06bf1507-66a9-4fa8-a48a-a7f5d050b5ef">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="d56899e3-5e35-45c4-94eb-dd16283014f9">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="features" class="java.lang.String"/>
+		<field name="topicwiseScore" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="DEMONSTRATE_OUTPUT" class="java.lang.String"/>
+	<parameter name="IMPROVE_OUTPUT" class="java.lang.String"/>
+	<parameter name="FOCUS_OUTPUT" class="java.lang.String"/>
+	<parameter name="DataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="features" class="java.lang.String"/>
+	<field name="topicwiseScore" class="java.lang.Integer"/>
+	<field name="Associate_email" class="java.lang.String"/>
+	<field name="Otj_name" class="java.lang.String"/>
+	<field name="Associate_id" class="java.lang.Integer"/>
+	<field name="Status" class="java.lang.String"/>
+	<field name="Score" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-1" y="5" width="557" height="40" backcolor="rgba(36, 170, 237, 0.88235295)" uuid="df0da942-5461-4214-946b-310f7111ce1e"/>
+				<textField>
+					<reportElement x="7" y="8" width="530" height="25" forecolor="#FFFFFF" uuid="07a72f25-c930-435d-82dc-620b452a9ba1"/>
+					<textElement>
+						<font fontName="Arial" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ON THE JOB TRAINING (OJT) REPORT OF : " + $F{Associate_email}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="668" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<frame>
+				<reportElement mode="Opaque" x="2" y="170" width="551" height="3" backcolor="#0073FF" uuid="295f4f63-617d-499f-89fe-0602d186aaac"/>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-1" y="-16" width="557" height="76" backcolor="#1F1064" uuid="078a5d06-f9f1-415f-84a0-dea3ec8295e3"/>
+				<staticText>
+					<reportElement x="10" y="50" width="314" height="19" forecolor="#FFFFFF" uuid="5ad017fe-a803-41ee-86f3-9c5bf9b3a625"/>
+					<textElement>
+						<font fontName="Arial" size="13" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[ASSOCIATE OJT ASSESSMENT REPORT]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Transparent" x="310" y="10" width="231" height="59" forecolor="#FFFFFF" uuid="339171c1-407d-4e42-b09d-477c2fddf959"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="13"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Otj_name}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="4" y="70" width="139" height="30" uuid="ff9999ec-b649-45b3-a277-285ee3b7d8e9"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[ASSOCIATE NAME  :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="130" width="115" height="30" uuid="ebf7a09c-2cd8-4468-afde-17ff27b22a93"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[ASSOCIATE ID  :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="70" width="70" height="30" uuid="4e3f3fc1-0405-4b47-9ca2-40986da74c36"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[STATUS :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="100" width="245" height="30" uuid="e40b92d2-c425-4ea5-88fa-0338eb54433d"/>
+				<textElement>
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Associate_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="130" width="178" height="30" uuid="0b58c998-9b4b-4e8a-b4e8-b30dd6741bdb"/>
+				<textElement>
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Associate_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="70" width="100" height="30" uuid="24f4f28f-6eb4-4676-9c86-8759e50c58e8"/>
+				<textElement>
+					<font fontName="Arial" size="13" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="190" width="191" height="30" forecolor="#0015FF" uuid="fe12e9cf-c775-4c38-8178-7dff17505c5d"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observation Notes :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="430" width="100" height="30" uuid="b7d66513-7598-4ecb-bc7e-90154e92c921"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Skill Analysis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="512" width="36" height="70" uuid="e3a7a09f-f020-43e0-b273-3106b2984372"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Topics]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="400" width="161" height="30" uuid="c8bea473-5af6-47c1-9578-23e130c4d8d3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Score}+"/100"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="400" width="95" height="30" forecolor="#0088FF" uuid="a8bf938b-e618-487e-8479-c5ce07fad54e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Overall Score :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="6" y="220" width="504" height="180" uuid="dff46191-5b5b-4c11-823f-3f58638abfb3"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA["You have demonstrated your skills very well on the below topics : \n\n" + $P{DEMONSTRATE_OUTPUT} + "\n"+
+"You have to improve on the below topics :\n\n" + $P{IMPROVE_OUTPUT} + "\n" +
+"You have to focus more on the below topics :\n\n" + $P{FOCUS_OUTPUT} 
+]]></textFieldExpression>
+			</textField>
+			<barChart>
+				<chart isShowLegend="false" evaluationTime="Report" renderType="draw">
+					<reportElement isPrintRepeatedValues="false" x="110" y="460" width="387" height="174" uuid="1c7c45c5-ea1c-4c52-9efb-81310d50d89e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<propertyExpression name="net.sf.jasperreports.customizer.0.shapeHeight"><![CDATA[$F{topicwiseScore}]]></propertyExpression>
+						<propertyExpression name="net.sf.jasperreports.customizer.2.category"><![CDATA[$F{features}]]></propertyExpression>
+					</reportElement>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Dataset1" uuid="df990fc5-1c01-444d-bfb7-8d6e324cb2ef">
+							<dataSourceExpression><![CDATA[$P{DataSource}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[($F{topicwiseScore} > 80) ? "Condition 1" :
+($F{topicwiseScore} <= 80 && $F{topicwiseScore} > 50) ? "Condition 2" :
+($F{topicwiseScore} <= 50 && $F{topicwiseScore} > 0) ? "Condition 3" : "Other"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{features}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{topicwiseScore}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="false" isShowTickLabels="true" isShowTickMarks="false">
+					<plot orientation="Horizontal">
+						<seriesColor seriesOrder="0" color="#76CC2F"/>
+						<seriesColor seriesOrder="1" color="#F77028"/>
+						<seriesColor seriesOrder="2" color="#AD1744"/>
+						<seriesColor seriesOrder="3" color="#B5AEB1"/>
+					</plot>
+					<itemLabel>
+						<font fontName="Arial" size="13"/>
+					</itemLabel>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" verticalTickLabels="false" axisLineColor="#000000">
+							<labelFont>
+								<font fontName="Arial"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="Arial"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" verticalTickLabels="false" axisLineColor="#000000">
+							<labelFont>
+								<font fontName="Arial" size="10"/>
+							</labelFont>
+							<tickLabelFont>
+								<font fontName="Arial"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+	<summary>
+		<band height="55">
+			<staticText>
+				<reportElement x="4" y="10" width="482" height="19" uuid="9d869630-49bd-49e4-9b35-b470d84c0df2"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[This report is Confidential. All rights reserved © Maantt Technology Solutions 2023 ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="6" y="0" width="562" height="2" forecolor="#0084FF" backcolor="#4D00FF" uuid="6b0e0d3a-0463-42cc-b5a3-3561dc214e8b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="497" y="10" width="56" height="25" uuid="fec85541-f81d-419e-bcd7-d00ed3247bae"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[| Page : 2]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
