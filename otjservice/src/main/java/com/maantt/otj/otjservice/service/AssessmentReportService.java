@@ -112,7 +112,7 @@ public class AssessmentReportService {
 		
 		assessmentReport.setScore((int)skillClusterSheet.getRow(6).getCell(3).getNumericCellValue());
 		
-//		assessmentReport.setOtjReceivedDate((java.sql.Date) reportSheet.getRow(5).getCell(9).getDateCellValue());
+
 		
 		assessmentReport.setOtjReceivedDate(getJavaSqlDate(reportSheet.getRow(5).getCell(9)));
 
