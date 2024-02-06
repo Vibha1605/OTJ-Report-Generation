@@ -38,7 +38,7 @@ public class PdfGeneratorService {
 
     public ResponseEntity<byte[]> generatePdfReport(AssessmentReport masterDetails) throws IOException, JRException {
         try {
-            log.info("{}", masterDetails);
+            //log.info("{}", masterDetails);
 
             // Load JasperReport templates from JRXML
             JasperReport report1 = JasperCompileManager.compileReport(JRXML_PATH_PAGE_1);
@@ -68,7 +68,7 @@ public class PdfGeneratorService {
             ByteArrayOutputStream mergedReportOutputStream = mergeJasperPrints(jasperPrintList);
 
             // Set response headers
-            HttpHeaders headers = createPdfResponseHeaders();
+            HttpHeaders headers = createPdfResponseHeaders(masterDetails.getAssociateName());
 
             // Log information
             log.info("Generated PDF report for Assessment Report ID: {}", masterDetails.getId());
@@ -86,11 +86,11 @@ public class PdfGeneratorService {
         Map<String, Object> parameters = new HashMap<>();
         dataSource.populateOutputStrings();
         parameters.put("DEMONSTRATE_OUTPUT", dataSource.getDemonstrateOutput());
-        log.info("{}", dataSource.getDemonstrateOutput());
+        //log.info("{}", dataSource.getDemonstrateOutput());
         parameters.put("IMPROVE_OUTPUT", dataSource.getImproveOutput());
-        log.info("{}", dataSource.getImproveOutput());
+        //log.info("{}", dataSource.getImproveOutput());
         parameters.put("FOCUS_OUTPUT", dataSource.getFocusOutput());
-        log.info("{}", dataSource.getFocusOutput());
+        //log.info("{}", dataSource.getFocusOutput());
 
         // Add more parameters as needed
 
@@ -114,10 +114,10 @@ public class PdfGeneratorService {
         return mergedReportOutputStream;
     }
 
-    private HttpHeaders createPdfResponseHeaders() {
+    private HttpHeaders createPdfResponseHeaders(String associateName) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
-        headers.setContentDispositionFormData("attachment", "otj-report.pdf");
+        headers.setContentDispositionFormData("inline", associateName + "-report.pdf");
         return headers;
     }
 }

@@ -58,11 +58,6 @@
     		<artifactId>jasperreports-fonts</artifactId>
     		<version>6.8.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.example</groupId>
-			<artifactId>otjpdf</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 		    <groupId>org.hibernate</groupId>
