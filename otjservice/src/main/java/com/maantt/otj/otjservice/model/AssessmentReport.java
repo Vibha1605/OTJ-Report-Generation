@@ -3,7 +3,6 @@ package com.maantt.otj.otjservice.model;
 import java.sql.Date;
 import java.util.List;
 
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -178,5 +177,15 @@ public class AssessmentReport {
 				"AssessmentReport [id=%s, associateId=%s, associateName=%s, associateEmail=%s, otjName=%s, otjCode=%s, otjReceivedDate=%s, plannedDeliveryDate=%s, actualDeliveryDate=%s, score=%s, status=%s]",
 				id, associateId, associateName, associateEmail, otjName, otjCode, otjReceivedDate, plannedDeliveryDate,
 				actualDeliveryDate, score, status);
+	}
+
+	public boolean hasErrors() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<String> getErrors() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

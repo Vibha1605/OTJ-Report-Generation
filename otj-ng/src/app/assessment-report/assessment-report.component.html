@@ -1,10 +1,30 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4">
+          <div class="mb-3">
+              <label for="formFile" class="form-label">Upload file example</label>
+              <input (change)="this.onFilechange($event)" class="form-control" type="file" id="formFile">
+              <div *ngIf="response && response.status == 'success'" style="color:green;" >File uploaded successfully.</div>
+              <div *ngIf="response && response.status == 'error'">
+                  <p style="color:red;">Uploaded file has errors</p>
+                      <ul>
+                          <li *ngFor="let error of response.errors" style="color:red;">{{ error }}</li>
+                      </ul>
+              </div>
+              <!-- <div *ngIf="response && response.status == 'errors'">{{response.errors}} -->
+              <button (click)="this.upload()" type="button" class="btn btn-primary mt-3">Upload</button>
+              <!-- {{response|json}} -->
+          </div>
+      </div>
+  </div>
+</div>
 <div class="container-fluid">
   
     <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">Associate ID</th>
-          <th scope="col">Associate Name</th>
+          <!-- <th scope="col">Associate Name</th> -->
           <th scope="col">Associate Email</th>
           <th scope="col">OTJ Name</th>
           <th scope="col">Score</th>
@@ -16,7 +36,7 @@
       <tbody>
         <tr *ngFor="let rep of report">
           <td>{{rep.associateId}}</td>
-          <td>{{rep.associateName}}</td>
+          <!-- <td>{{rep.associateName}}</td> -->
           <td>{{rep.associateEmail}}</td>
           <td>{{rep.otjName}}</td>
           <td>{{rep.score}}</td>
@@ -27,7 +47,9 @@
               </ul>
           </td>
           <td>
-            <a href="http://localhost:8080/report/pdf/{{rep.id}}"><i class="bi bi-file-earmark-arrow-down-fill"></i></a><br><a href=""><i class="bi bi-trash"></i></a>
+            <a href="http://localhost:8080/report/pdf/{{rep.id}}"><i class="bi bi-file-earmark-arrow-down-fill"></i></a><br>
+            <a mat-icon-button class="delete-button" (click)="deleteItem(rep.id)">
+              <mat-icon color="warn">delete</mat-icon></a>
           </td>
         </tr>
       </tbody>

@@ -28,6 +28,7 @@ import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 
 @Service
+
 public class PdfGeneratorService {
 
     private static final Logger log = LoggerFactory.getLogger(PdfGeneratorService.class);
@@ -117,7 +118,7 @@ public class PdfGeneratorService {
     private HttpHeaders createPdfResponseHeaders(String associateName) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
-        headers.setContentDispositionFormData("inline", associateName + "-report.pdf");
+        headers.setContentDispositionFormData("inline", associateName + "Report.pdf");
         return headers;
     }
 }
