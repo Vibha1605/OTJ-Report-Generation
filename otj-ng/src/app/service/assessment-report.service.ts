@@ -23,6 +23,11 @@ public uploadfile(file: File): Observable<ExcelUploadResponse> {
   formParams.append('file', file)
   return this.httpClient.post<ExcelUploadResponse>('http://localhost:8080/report/excel-upload', formParams)
 }
+// deleteItem(id: number): Observable<any> {
+//   const url = {this.baseUrl/+{id}};
+//   return this.httpClient.delete(url);
+// }
+
 }
 
 

@@ -50,4 +50,23 @@ export class AssessmentReportComponent implements OnInit {
       alert("Please select a file first")
     }
   }
+
+  // deleteItem(reportId: number): void {
+  //   const confirmDelete = window.confirm('Are you sure you want to delete this report?');
+
+  //   if (confirmDelete) {
+  //     this.assessmentReportService.deleteItem(reportId).subscribe(
+  //       () => {
+  //         // Successful delete
+  //         // Optionally, you can reload the list of reports or update the UI accordingly
+  //         console.log('Report deleted successfully');
+  //         this.getAllReports(); // Refresh the list after deletion
+  //       },
+  //       error => {
+  //         // Handle error
+  //         console.error('Error deleting report:', error);
+  //       }
+  //     );
+  //   }
+  // }
 }

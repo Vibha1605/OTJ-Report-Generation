@@ -58,6 +58,9 @@ public class AssessmentReportService {
 	public void save(AssessmentReport assessmentReport) {
 		repository.save(assessmentReport);
 	}
+	public void deleteById(Long id) {
+	       repository.deleteById(id);
+	    }
 
 	public ExcelUploadResponse validateExcelAndSave(MultipartFile multipartFile)
 			throws IllegalStateException, IOException {
