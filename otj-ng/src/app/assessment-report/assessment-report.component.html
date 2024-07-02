@@ -47,8 +47,15 @@
               </ul>
           </td>
           <td>
-            <a href="http://localhost:8080/report/pdf/{{rep.id}}"><i class="bi bi-file-earmark-arrow-down-fill"></i></a><br><a href=""><i class="bi bi-trash"></i></a>
+            
+            <a mat-icon-button class="delete-button" (click)="deleteItem(rep.id)">
+              <mat-icon color="warn">delete</mat-icon>
+            </a>
+              <a href="http://localhost:8080/report/pdf/{{rep.id}}"><i class="bi bi-file-earmark-arrow-down-fill"></i></a>
+            
+            
           </td>
+          
         </tr>
       </tbody>
     </table>

@@ -9,7 +9,7 @@ import com.maantt.otj.otjservice.model.AssessmentReport;
 
 @Repository
 
-public interface AssessmentReportRepository extends JpaRepository<AssessmentReport, Long> {
+public interface AssessmentReportRepository extends JpaRepository<AssessmentReport, Integer> {
    AssessmentReport findById(int id);
 
 }

@@ -29,38 +29,37 @@ import com.maantt.otj.otjservice.model.AssessmentReport;
 import com.maantt.otj.otjservice.model.ExcelUploadResponse;
 import com.maantt.otj.otjservice.model.SkillCluster;
 import com.maantt.otj.otjservice.repository.AssessmentReportRepository;
-
 @Service
-
 @Transactional
 public class AssessmentReportService {
 
-	private final AssessmentReportRepository repository;
+    private final AssessmentReportRepository repository;
 
-	private static final Logger log = LoggerFactory.getLogger(AssessmentReportRepository.class);
-	private static final String FILE_NAME = "C://Users//vibha srinivasan//Downloads//excel.xlsx";
+    private static final Logger log = LoggerFactory.getLogger(AssessmentReportService.class);
 
-	@Autowired
-	public AssessmentReportService(AssessmentReportRepository repository) {
-		this.repository = repository;
+    @Autowired
+    public AssessmentReportService(AssessmentReportRepository repository) {
+        this.repository = repository;
+    }
 
-	}
+    public List<AssessmentReport> listAllReport() {
+        return repository.findAll();
+    }
 
-	public List<AssessmentReport> listAllReport() {
-		return repository.findAll();
-	}
-	
-	public AssessmentReport findReportById(int id) {
+    public AssessmentReport findReportById(int id) {
         return repository.findById(id);
+    }
+
+    public void deleteById(int id) {
+        repository.deleteById(id);
     }
 
 
 	public void save(AssessmentReport assessmentReport) {
 		repository.save(assessmentReport);
 	}
-	public void deleteById(Long id) {
-	       repository.deleteById(id);
-	    }
+	
+
 
 	public ExcelUploadResponse validateExcelAndSave(MultipartFile multipartFile)
 			throws IllegalStateException, IOException {
@@ -89,7 +88,7 @@ public class AssessmentReportService {
 
 			else {
 				AssessmentReport assessmentReport = generateReport(reportSheet, skillClusterSheet);
-				repository.save(generateReport(reportSheet, skillClusterSheet));
+//				repository.save(generateReport(reportSheet, skillClusterSheet));
 				response.setAssessmentReport(report);
 				response.setStatus("success");
 			}
@@ -136,6 +135,7 @@ public class AssessmentReportService {
 //				log.info("{}", assessmentReport.getId());
 				skillCluster.setFeatures(row.getCell(0).getStringCellValue());
 				log.info("{}", row.getCell(0).getStringCellValue());
+				skillCluster.setTopicwiseScore((int)row.getCell(4).getNumericCellValue());
 
 				skillClusters.add(skillCluster);
 			}
@@ -240,11 +240,15 @@ public class AssessmentReportService {
 			if (!isValidEmail(email)) {
 				log.info("InValid Email format: {}", email);
 				errors.add("Invalid Email format");
-			} else {
-
+			} 
+			else if (email.length() > 64) {
+	            log.info("Invalid Email length: {}", email.length());
+	            errors.add("Invalid Email length");
+	        }
 			}
-		}
 	}
+
+	
 
 	private void validateDate(Sheet sheet, String cellAddress, List<String> errors) {
 		CellReference cellRef = new CellReference(cellAddress);
@@ -281,7 +285,7 @@ public class AssessmentReportService {
 
 		} else {
 
-			errors.add("Invalid Areas cell format");
+			//errors.add("Invalid Areas cell format");
 		}
 	}
 
@@ -356,6 +360,8 @@ public class AssessmentReportService {
 	public static boolean isValidEmail(String email) {
 
 		String emailRegex = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
+		
+
 
 		boolean isValid = Pattern.matches(emailRegex, email) && !email.startsWith(".") && !email.endsWith(".")
 				&& !email.contains("..") && !email.contains(".@") && !email.contains("@.");
@@ -367,7 +373,7 @@ public class AssessmentReportService {
 
 	private static boolean isValidDomain(String email) {
 
-		String[] validDomainExtensions = { ".com", ".net", ".org", ".gov", ".edu", ".in", ".us" };  
+		String[] validDomainExtensions = { ".com", ".net", ".org", ".gov", ".edu", ".in", ".us", ".uk", ".ru" };  
 
 		int atIndex = email.lastIndexOf('@');
 		if (atIndex != -1) {
@@ -382,6 +388,10 @@ public class AssessmentReportService {
 		System.out.println("Invalid domain in email: " + email);
 		return false;
 	}
+	private boolean isValidEmailLength(String email) {
+	    return email.length() <= 64;
+	}
+
 
 	
 	private static boolean isValidDate(String date) {

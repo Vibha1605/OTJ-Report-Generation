@@ -7,7 +7,7 @@ import { ExcelUploadResponse } from '../model/ExcelUploadResponse.model';
 @Component({
   selector: 'app-assessment-report',
   templateUrl: './assessment-report.component.html',
-  styleUrls: ['./assessment-report.component.css']
+  styleUrls: ['./assessment-report.component.scss']
 })
 export class AssessmentReportComponent implements OnInit {
   file!: File;
@@ -51,22 +51,26 @@ export class AssessmentReportComponent implements OnInit {
     }
   }
 
-  // deleteItem(reportId: number): void {
-  //   const confirmDelete = window.confirm('Are you sure you want to delete this report?');
 
-  //   if (confirmDelete) {
-  //     this.assessmentReportService.deleteItem(reportId).subscribe(
-  //       () => {
-  //         // Successful delete
-  //         // Optionally, you can reload the list of reports or update the UI accordingly
-  //         console.log('Report deleted successfully');
-  //         this.getAllReports(); // Refresh the list after deletion
-  //       },
-  //       error => {
-  //         // Handle error
-  //         console.error('Error deleting report:', error);
-  //       }
-  //     );
-  //   }
-  // }
+  deleteItem(reportId: number): void {
+    const confirmDelete = window.confirm('Are you sure you want to delete this report?');
+  
+    if (confirmDelete) {
+      this.assessmentReportService.deleteItem(reportId).subscribe({
+        next: () => {
+          // Successful delete
+          console.log('Report deleted successfully');
+          // Refresh the list of reports
+          this.getAllreport(); 
+        },
+        error: error => {
+          // Handle error
+          console.error('Error deleting report:', error);
+        }
+      });
+    }
+  }
+  
+  
+
 }

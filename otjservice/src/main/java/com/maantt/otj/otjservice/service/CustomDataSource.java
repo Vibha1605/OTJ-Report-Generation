@@ -20,8 +20,6 @@ public class CustomDataSource implements JRDataSource {
     private StringBuilder demonstrateOutput = new StringBuilder();
     private StringBuilder improveOutput = new StringBuilder();
     private StringBuilder focusOutput = new StringBuilder();
-    // private StringBuilder allFeaturesOutput = new StringBuilder();
-    // private Integer alltopicwiseScoreOutput = new StringBuilder();
     private boolean hasProcessedData = false;
     private List<FeatureScore> featureScores = new CopyOnWriteArrayList<>();
 
@@ -31,9 +29,7 @@ public class CustomDataSource implements JRDataSource {
     public CustomDataSource(AssessmentReport masterDetails) {
         if (masterDetails == null) {
             throw new IllegalArgumentException("AssessmentReport cannot be null");
-        } else {
-            log.info("Generating Report Wait!!!.....");
-        }
+        } 
         this.masterDetails = masterDetails; // Populate output strings during initialization
     }
 
@@ -58,12 +54,12 @@ public class CustomDataSource implements JRDataSource {
         }
 
         public String getFeatures() {
-        	log.info("{}",features);
+        	//log.info("{}",features);
             return features;
         }
 
         public int getTopicwiseScore() {
-        	log.info("{}",topicwiseScore);
+        	//log.info("{}",topicwiseScore);
             return topicwiseScore;
         }
     }
@@ -88,9 +84,9 @@ public class CustomDataSource implements JRDataSource {
                 }
 
                 synchronized (featureScores) {
-                	log.info("{}",new FeatureScore(features, topicwiseScore));
+                	//log.info("{}",new FeatureScore(features, topicwiseScore));
                     featureScores.add(new FeatureScore(features, topicwiseScore));
-                    log.info("{}",featureScores);
+                    //log.info("{}",featureScores);
                 }
             }
         }
@@ -108,14 +104,6 @@ public class CustomDataSource implements JRDataSource {
         return focusOutput.toString();
     }
 
-    // public String getAllFeaturesOutput() {
-    //     return allFeaturesOutput.toString();
-    // }
-
-    // public Integer getAllTopicwiseScoreOutput() {
-    //     return alltopicwiseScoreOutput;
-    // }
-
     public List<FeatureScore> getFeatureScores() {
         return featureScores;
     }
@@ -127,7 +115,7 @@ public class CustomDataSource implements JRDataSource {
         }
 
         String fieldName = jrField.getName();
-        log.info("{}", fieldName);
+        //log.info("{}", fieldName);
 
         switch (fieldName) {
             case "User_id":

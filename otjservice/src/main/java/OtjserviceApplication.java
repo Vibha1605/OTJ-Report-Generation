@@ -1,4 +1,3 @@
-package com.maantt.otj.otjservice;
 
 
 import org.springframework.boot.SpringApplication;
