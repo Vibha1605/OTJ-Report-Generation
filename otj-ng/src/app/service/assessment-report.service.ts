@@ -20,8 +20,6 @@ export class AssessmentReportService{
 
   }
 
-
-
 deleteItem(reportId: number): Observable<any> {
   const url = `${this.baseUrl}/delete/${reportId}`;
   return this.httpClient.delete(url).pipe(

@@ -285,7 +285,7 @@ public class AssessmentReportService {
 
 		} else {
 
-			//errors.add("Invalid Areas cell format");
+			errors.add("Invalid Areas cell format");
 		}
 	}
 
